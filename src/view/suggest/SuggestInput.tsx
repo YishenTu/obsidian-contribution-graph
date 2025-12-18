@@ -1,5 +1,5 @@
 import * as React from "react";
-import { CSSProperties } from "react";
+import { CSSProperties, type JSX } from "react";
 import { Suggest, SuggestItem } from "./Suggest";
 
 export function SuggestInput(props: {

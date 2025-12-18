@@ -1,4 +1,4 @@
-import { ReactNode, useState } from "react";
+import { ReactNode, useState, type JSX } from "react";
 import { Divider } from "../divider/Divider";
 
 export function Tab(props: {

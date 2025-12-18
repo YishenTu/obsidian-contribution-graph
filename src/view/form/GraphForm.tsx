@@ -1,4 +1,4 @@
-import { useRef, useState } from "react";
+import { useRef, useState, type JSX } from "react";
 import { CodeBlockProcessor } from "src/processor/codeBlockProcessor";
 import { CellStyleRule } from "src/types";
 import { Choose } from "../choose/Choose";

@@ -9,7 +9,7 @@ import {
 	useInteractions,
 } from "@floating-ui/react";
 import { Chrome, ColorResult } from "@uiw/react-color";
-import { useState } from "react";
+import { useState, type JSX } from "react";
 
 export function ColorPicker(props: {
 	color?: string;

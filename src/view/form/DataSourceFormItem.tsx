@@ -1,5 +1,5 @@
 import { DateTime } from "luxon";
-import { Fragment, useState } from "react";
+import { Fragment, useState, type JSX } from "react";
 import { Locals } from "src/i18/messages";
 import { DataFilter, DataSource, DataSourceType } from "src/query/types";
 import { getAllProperties, getTagOptions } from "src/util/page";

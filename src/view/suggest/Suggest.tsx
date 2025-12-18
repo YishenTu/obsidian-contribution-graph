@@ -12,7 +12,7 @@ import {
 } from "@floating-ui/react";
 import { debounce } from "obsidian";
 import * as React from "react";
-import { CSSProperties, useEffect, useLayoutEffect } from "react";
+import { CSSProperties, useEffect, useLayoutEffect, type JSX } from "react";
 
 export function Suggest(props: {
 	query: string;

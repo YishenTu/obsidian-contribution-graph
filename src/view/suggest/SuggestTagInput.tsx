@@ -1,4 +1,4 @@
-import { ReactNode, useRef, useState } from "react";
+import { ReactNode, useRef, useState, type JSX } from "react";
 import { SuggestItem, Suggest } from "./Suggest";
 
 export class TagOption {
