@@ -142,6 +142,10 @@ export function Suggest(props: {
 									props.onSelected(item, index);
 									setActiveIndex(index);
 								}}
+								onTouchStart={() => {
+									// Immediate visual feedback on touch
+									setActiveIndex(index);
+								}}
 							>
 								{item.icon && <div className="suggest-icon">{item.icon}</div>}
 								<div className="suggest-content">

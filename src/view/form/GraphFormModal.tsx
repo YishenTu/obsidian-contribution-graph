@@ -98,7 +98,7 @@ export class ContributionGraphCreateModal extends Modal {
 		) {
 			try {
 				return parseYaml(this.originalConfigContent) as YamlGraphConfig;
-			} catch (e) {
+			} catch {
 				return null;
 			}
 		} else {
@@ -117,7 +117,7 @@ export class ContributionGraphCreateModal extends Modal {
 		if (selection && selection.trim() != "") {
 			try {
 				return parseYaml(selection) as YamlGraphConfig;
-			} catch (e) {
+			} catch {
 				return null;
 			}
 		} else {

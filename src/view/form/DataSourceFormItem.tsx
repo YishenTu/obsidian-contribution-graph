@@ -28,22 +28,22 @@ export function DataSourceFormItem(props: {
 		dataSource.type || "PAGE"
 	);
 
-	const changeDataSource = (name: string, value: any) => {
+	const changeDataSource = (name: string, value: unknown) => {
 		const newDataSource = { ...dataSource, [name]: value };
 		props.onChange(newDataSource);
 	};
 
-	const changeDateField = (name: string, value: any) => {
+	const changeDateField = (name: string, value: unknown) => {
 		const newDateField = { ...dataSource.dateField, [name]: value };
 		changeDataSource("dateField", newDateField);
 	};
 
-	const changeCountField = (name: string, value: any) => {
+	const changeCountField = (name: string, value: unknown) => {
 		const newCountField = { ...dataSource.countField, [name]: value };
 		changeDataSource("countField", newCountField);
 	};
 
-	const changeFilter = (id: string, name: string, value: any) => {
+	const changeFilter = (id: string, name: string, value: unknown) => {
 		const newFilters = dataSource.filters?.map((f) => {
 			if (f.id == id) {
 				if (name == "type" && value == "STATUS_IS") {

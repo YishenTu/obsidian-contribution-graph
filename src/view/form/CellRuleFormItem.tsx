@@ -6,7 +6,6 @@ import {
 	inline,
 	autoUpdate,
 	useDismiss,
-	useRole,
 	useInteractions,
 } from "@floating-ui/react";
 import { Chrome, ColorResult } from "@uiw/react-color";
@@ -20,7 +19,7 @@ export function CellRuleItem(props: {
 }): JSX.Element {
 	const [rule, setRule] = useState(props.rule);
 	const [showColorPicker, setShowColorPicker] = useState(false);
-	const changeRule = (name: string, value: any) => {
+	const changeRule = (name: string, value: string | number) => {
 		const newRule = { ...rule, [name]: value };
 		setRule(newRule);
 		props.onChange(newRule);

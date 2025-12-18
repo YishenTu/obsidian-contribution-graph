@@ -6,7 +6,7 @@ export function Choose(props: {
 	onChoose: (option: ChooseOption) => void;
 }): JSX.Element {
 	const { onChoose } = props;
-	const [data, setData] = useState(props.options);
+	const [data] = useState(props.options);
 	const [defaultValue, setDefaultValue] = useState(props.defaultValue);
 
 	const choosed = (option: ChooseOption) => {

@@ -161,7 +161,7 @@ export class YamlGraphConfig {
 			if (typeof config.startOfWeek !== "number") {
 				try {
 					config.startOfWeek = parseInt(config.startOfWeek);
-				} catch (e) {
+				} catch {
 					throw new GraphProcessError(
 						INVALID_START_OF_WEEK(config.startOfWeek)
 					);

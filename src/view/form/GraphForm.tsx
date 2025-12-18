@@ -70,7 +70,7 @@ export function GraphForm(props: {
 		return "";
 	};
 
-	const changeFormData = (name: string, value: any) => {
+	const changeFormData = (name: string, value: unknown) => {
 		setFormData((prevData) => ({ ...prevData, [name]: value }));
 	};
 
@@ -228,7 +228,7 @@ export function GraphForm(props: {
 															.value as DateRangeType
 													);
 													if (
-														e.target.type !=
+														e.target.value !=
 														"FIXED_DATE_RANGE"
 													) {
 														changeFormData(
@@ -397,7 +397,7 @@ export function GraphForm(props: {
 															: startOfWeekOptions.find(
 																	(p) =>
 																		p.selected
-															  )?.value
+																)?.value
 													}
 													onChange={handleInputChange}
 												>

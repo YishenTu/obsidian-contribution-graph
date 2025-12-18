@@ -165,7 +165,7 @@ export abstract class BaseDataviewDataSourceQuery {
 		} else {
 			return data.map((item) => {
 				// @ts-ignore
-				return new Data(item, item.file.ctime);
+				return new Data(item, item.file.mtime);
 			});
 		}
 	}
@@ -217,7 +217,7 @@ export abstract class BaseDataviewDataSourceQuery {
 			if (dateTime.isValid) {
 				return dateTime;
 			}
-		} catch (e) {
+		} catch {
 			console.warn(
 				"can't parse date, it's a valid format? " +
 				date +
@@ -309,7 +309,7 @@ export abstract class BaseDataviewDataSourceQuery {
 		data: Record<string, Literal>,
 		propertyType: PropertySource,
 		propertyName: string
-	): any;
+	): Literal | undefined;
 
 	getPropertySourceByCountFieldType(type: CountFieldType): PropertySource {
 		switch (type) {
@@ -369,6 +369,7 @@ function jump(
 			// @ts-ignore
 			item.raw.path,
 			evt.ctrlKey || (evt.metaKey && Platform.isMacOS),
+			// eslint-disable-next-line @typescript-eslint/no-explicit-any
 			selectionState as any
 		);
 	} else {

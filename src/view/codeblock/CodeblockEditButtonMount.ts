@@ -1,4 +1,4 @@
-import { App, MarkdownView, Notice, getIcon } from "obsidian";
+import { App, MarkdownView, Notice, Platform, getIcon } from "obsidian";
 import { ContributionGraphCreateModal } from "../form/GraphFormModal";
 
 export function mountEditButtonToCodeblock(
@@ -12,16 +12,23 @@ export function mountEditButtonToCodeblock(
 	if (iconEl) {
 		formEditButton.appendChild(iconEl);
 	}
-	codeblockDom.addEventListener("mouseover", () => {
-		const markdownView = app.workspace.getActiveViewOfType(MarkdownView);
-		if (markdownView && markdownView.getMode() !== "preview") {
-			formEditButton.style.opacity = "1";
-			justifyTop(codeblockDom, formEditButton);
-		}
-	});
-	codeblockDom.addEventListener("mouseout", () => {
-		formEditButton.style.opacity = "0";
-	});
+
+	// On mobile/touch devices, always show the edit button
+	// On desktop, show on hover
+	if (Platform.isMobile) {
+		formEditButton.style.opacity = "1";
+	} else {
+		codeblockDom.addEventListener("mouseover", () => {
+			const markdownView = app.workspace.getActiveViewOfType(MarkdownView);
+			if (markdownView && markdownView.getMode() !== "preview") {
+				formEditButton.style.opacity = "1";
+				justifyTop(codeblockDom, formEditButton);
+			}
+		});
+		codeblockDom.addEventListener("mouseout", () => {
+			formEditButton.style.opacity = "0";
+		});
+	}
 
 	formEditButton.onclick = () => {
 		new ContributionGraphCreateModal(this.app, code, (content) => {
@@ -55,12 +62,12 @@ function justifyTop(codeblockDom: HTMLElement, formEditButton: HTMLDivElement) {
 		codeblockDom.getElementsByClassName("edit-block-button");
 	let top: string | undefined;
 	if (obCodeblocButtonEls.length > 0) {
-		const obCodeblocButtonEl = obCodeblocButtonEls[0];
-		// @ts-ignore
-		top = obCodeblocButtonEl.computedStyleMap().get("top")?.toString();
+		const obCodeblocButtonEl = obCodeblocButtonEls[0] as HTMLElement;
+		// Use getComputedStyle instead of computedStyleMap for iOS compatibility
+		top = getComputedStyle(obCodeblocButtonEl).top;
 	}
 
-	if (top) {
+	if (top && top !== "auto") {
 		formEditButton.style.top = top;
 	} else {
 		formEditButton.style.top = "0";

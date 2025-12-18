@@ -1,4 +1,4 @@
-export function isLuxonDateTime(value: any): boolean {
+export function isLuxonDateTime(value: unknown): boolean {
     if (value == null || value == undefined) {
         return false;
     }

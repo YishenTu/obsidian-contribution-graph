@@ -18,7 +18,7 @@ export class DataviewPageDataSourceQuery extends BaseDataviewDataSourceQuery {
 		data: Record<string, Literal>,
 		propertyType: PropertySource,
 		propertyName: string
-	): any {
+	): Literal | undefined {
 		if (propertyType === "PAGE") {
 			return data[propertyName];
 		}

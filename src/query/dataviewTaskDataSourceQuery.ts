@@ -128,7 +128,7 @@ export class DataviewTaskDataSourceQuery extends BaseDataviewDataSourceQuery {
 		data: Record<string, Literal>,
 		propertyType: PropertySource,
 		propertyName: string
-	): any {
+	): Literal | undefined {
 		if (propertyType === "PAGE") {
 			if (data.file) {
 				// @ts-ignore
