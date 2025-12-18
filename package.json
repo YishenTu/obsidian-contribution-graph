@@ -6,7 +6,8 @@
 	"scripts": {
 		"dev": "node esbuild.config.mjs",
 		"build": "tsc -noEmit -skipLibCheck && node esbuild.config.mjs production",
-		"version": "node version-bump.mjs && git add manifest.json versions.json"
+		"version": "node version-bump.mjs && git add manifest.json versions.json",
+		"deploy": "npm run build && mkdir -p \"/Users/yishentu/Library/Mobile Documents/iCloud~md~obsidian/Documents/YT's Obsidian/.obsidian/plugins/obsidian-contribution-graph\" && cp main.js styles.css manifest.json \"/Users/yishentu/Library/Mobile Documents/iCloud~md~obsidian/Documents/YT's Obsidian/.obsidian/plugins/obsidian-contribution-graph/\""
 	},
 	"keywords": [],
 	"author": "",
