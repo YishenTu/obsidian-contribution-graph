@@ -120,4 +120,5 @@ export interface Local {
 	you_have_no_contributions_on: string;
 	you_have_contributed_to: string;
 	click_to_load_more: string;
+	create_new_note: string;
 }

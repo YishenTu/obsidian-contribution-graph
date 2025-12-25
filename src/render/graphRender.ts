@@ -5,6 +5,7 @@ import {
 	CellStyleRule,
 	ContributionItem,
 } from "src/types";
+import { getIcon } from "obsidian";
 import { parseDate } from "src/util/dateUtils";
 import {
 	generateByLatestDays,
@@ -87,6 +88,7 @@ export abstract class BaseGraphRender implements GraphRender {
 			cls: "cell-rule-indicator-container",
 			parent: parent,
 		});
+
 		const cellRules = this.getCellRules(graphConfig);
 		createDiv({
 			cls: "cell text",
@@ -113,6 +115,31 @@ export abstract class BaseGraphRender implements GraphRender {
 			text: "more",
 			parent: cellRuleIndicatorContainer,
 		});
+
+		this.renderCreateNewNoteButton(graphConfig, cellRuleIndicatorContainer);
+	}
+
+	renderCreateNewNoteButton(
+		graphConfig: ContributionGraphConfig,
+		parent: HTMLElement
+	) {
+		const button = createDiv({
+			cls: "create-new-button",
+			parent: parent,
+		});
+		const iconEl = getIcon("plus");
+		if (iconEl) {
+			button.appendChild(iconEl);
+		}
+		button.ariaLabel = Locals.get().create_new_note;
+		button.onclick = (e) => {
+			if (graphConfig.app) {
+				// @ts-ignore
+				graphConfig.app.commands.executeCommandById(
+					"file-explorer:new-file"
+				);
+			}
+		};
 	}
 
 	renderActivityContainer(

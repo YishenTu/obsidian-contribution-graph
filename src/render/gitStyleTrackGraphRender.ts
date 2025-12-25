@@ -27,15 +27,20 @@ export class GitStyleTrackGraphRender extends BaseGraphRender {
 			this.renderTitle(graphConfig, main);
 		}
 
-		// main -> charts
-		const chartsEl = createDiv({
-			cls: ["charts", "default"],
+		const chartsContainer = createDiv({
+			cls: "charts-container",
 			parent: main,
 		});
 
-		this.renderCellRuleIndicator(graphConfig, main);
-		const activityContainer= this.renderActivityContainer(graphConfig, main);
-		
+		// main -> charts
+		const chartsEl = createDiv({
+			cls: ["charts", "default"],
+			parent: chartsContainer,
+		});
+
+		this.renderCellRuleIndicator(graphConfig, chartsContainer);
+		const activityContainer = this.renderActivityContainer(graphConfig, main);
+
 		// main ->  week day indicator(text cell)
 		const weekTextColumns = createDiv({
 			cls: "column",
@@ -128,7 +133,7 @@ export class GitStyleTrackGraphRender extends BaseGraphRender {
 		}
 	}
 
-	renderWeekIndicator(weekdayContainer: HTMLDivElement,graphConfig: ContributionGraphConfig) {
+	renderWeekIndicator(weekdayContainer: HTMLDivElement, graphConfig: ContributionGraphConfig) {
 		const startOfWeek = graphConfig.startOfWeek || 0;
 		for (let i = 0; i < 7; i++) {
 			const weekdayCell = document.createElement("div");

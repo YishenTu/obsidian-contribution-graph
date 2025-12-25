@@ -1,4 +1,5 @@
 import { ContributionGraphConfig } from "src/types";
+import { App } from "obsidian";
 import { CalendarGraphRender } from "./calendarGraphRender";
 import { MonthTrackGraphRender } from "./monthTrackGraphRender";
 import { GitStyleTrackGraphRender } from "./gitStyleTrackGraphRender";
@@ -12,8 +13,10 @@ export class Renders {
 
 	static render(
 		container: HTMLElement,
-		graphConfig: ContributionGraphConfig
+		graphConfig: ContributionGraphConfig,
+		app?: App
 	): void {
+		graphConfig.app = app;
 		if (graphConfig.graphType === undefined) {
 			graphConfig.graphType = "default";
 		}

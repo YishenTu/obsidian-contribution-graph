@@ -32,13 +32,18 @@ export class CalendarGraphRender extends BaseGraphRender {
 			this.renderTitle(graphConfig, main);
 		}
 
-		// main -> charts
-		const chartsEl = createDiv({
-			cls: ["charts", "calendar"],
+		const chartsContainer = createDiv({
+			cls: "charts-container",
 			parent: main,
 		});
 
-		this.renderCellRuleIndicator(graphConfig, main);
+		// main -> charts
+		const chartsEl = createDiv({
+			cls: ["charts", "calendar"],
+			parent: chartsContainer,
+		});
+
+		this.renderCellRuleIndicator(graphConfig, chartsContainer);
 
 		const activityContainer = this.renderActivityContainer(graphConfig, main);
 

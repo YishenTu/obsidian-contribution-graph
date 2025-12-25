@@ -27,13 +27,18 @@ export class MonthTrackGraphRender extends BaseGraphRender {
 			this.renderTitle(graphConfig, main);
 		}
 
-		// main -> charts
-		const chartsEl = createDiv({
-			cls: ["charts", "month-track"],
+		const chartsContainer = createDiv({
+			cls: "charts-container",
 			parent: main,
 		});
 
-		this.renderCellRuleIndicator(graphConfig, main);
+		// main -> charts
+		const chartsEl = createDiv({
+			cls: ["charts", "month-track"],
+			parent: chartsContainer,
+		});
+
+		this.renderCellRuleIndicator(graphConfig, chartsContainer);
 
 		// main ->  month date indicator(text cell)
 		const dateIndicatorRow = createDiv({

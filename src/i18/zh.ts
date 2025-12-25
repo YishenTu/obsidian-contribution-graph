@@ -1,8 +1,8 @@
 import { Local } from "./types";
 
 export class Zh implements Local {
-	default = "默认";
-	click_to_reset = "点击重置";
+    default = "默认";
+    click_to_reset = "点击重置";
     /**
      * context menu
      */
@@ -15,8 +15,8 @@ export class Zh implements Local {
     form_style_settings = "样式设置";
     form_about = "关于";
     form_contact_me = "联系我";
-	form_project_url = "项目地址";
-	form_sponsor = "赞助";
+    form_project_url = "项目地址";
+    form_sponsor = "赞助";
     form_title = "标题";
     form_title_placeholder = "输入标题";
     form_graph_type = "图表类型";
@@ -26,7 +26,7 @@ export class Zh implements Local {
     form_date_range = "日期范围";
     form_date_range_latest_days = "最近几天";
     form_date_range_latest_month = "最近几个整月";
-	form_date_range_latest_year = "最近几个整年";
+    form_date_range_latest_year = "最近几个整年";
     form_date_range_input_placeholder = "在这里输入数值";
     form_date_range_fixed_date = "固定日期";
     form_date_range_start_date = "开始日期";
@@ -43,7 +43,7 @@ export class Zh implements Local {
     form_datasource_filter_task_none = "无";
     form_datasource_filter_task_status_completed = "已完成（不包含子任务）";
     form_datasource_filter_task_status_fully_completed = "已完成（包含子任务）";
-	form_datasource_filter_task_status_canceled = "已取消";
+    form_datasource_filter_task_status_canceled = "已取消";
     form_datasource_filter_task_status_any = "任意状态";
     form_datasource_filter_task_status_incomplete = "未完成";
     form_datasource_filter_contains_tag = "包含任意一个标签";
@@ -81,17 +81,17 @@ export class Zh implements Local {
     form_count_field_count_field_type_task_prop = "任务属性";
     form_title_font_size_label = "标题字体大小";
     form_number_input_min_warning = "允许的最小值为 {value}";
-	form_number_input_max_warning = "允许的最大值为 {value}";
+    form_number_input_max_warning = "允许的最大值为 {value}";
     form_fill_the_screen_label = "充满屏幕";
     form_main_container_bg_color = "背景颜色";
-	form_enable_main_container_shadow = "启用阴影";
+    form_enable_main_container_shadow = "启用阴影";
     form_show_cell_indicators = "显示单元格指示器";
     form_cell_shape = "单元格形状";
     form_cell_shape_circle = "圆形";
     form_cell_shape_square = "方块";
     form_cell_shape_rounded = "圆角";
     form_cell_min_height = "单元格最小高度";
-	form_cell_min_width = "单元格最小宽度";
+    form_cell_min_width = "单元格最小宽度";
 
     form_datasource_type_page = "文档";
     form_datasource_type_all_task = "所有任务";
@@ -121,4 +121,5 @@ export class Zh implements Local {
     you_have_no_contributions_on = "你在 {date} 没有任何贡献";
     you_have_contributed_to = "你在 {date} 有 {value} 次贡献";
     click_to_load_more = "点击加载更多......";
+    create_new_note = "新建笔记";
 }

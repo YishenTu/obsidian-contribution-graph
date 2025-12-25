@@ -1,4 +1,5 @@
 import { DEFAULT_RULES } from "./constants";
+import { App } from "obsidian";
 
 export class ContributionGraphConfig {
 	/**
@@ -87,6 +88,11 @@ export class ContributionGraphConfig {
 		cellData: ContributionCellData,
 		event: MouseEvent | undefined
 	) => void | undefined;
+
+	/**
+	 * obsidian app
+	 */
+	app?: App;
 }
 
 export interface Contribution {

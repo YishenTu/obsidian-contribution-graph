@@ -2,7 +2,7 @@ import { Local } from "./types";
 
 export class En implements Local {
     default = "default";
-	click_to_reset = "click to reset";
+    click_to_reset = "click to reset";
 
     /**
      * context menu
@@ -39,14 +39,14 @@ export class En implements Local {
     form_datasource_filter_type_none = "None";
     form_datasource_filter_type_status_is = "Status Is";
     form_datasource_filter_type_contains_any_tag = "Contains Any Tag";
-	form_datasource_filter_type_status_in = "Status In";
+    form_datasource_filter_type_status_in = "Status In";
 
     form_datasource_filter_task_none = "None";
     form_datasource_filter_task_status_completed = "Completed";
     form_datasource_filter_task_status_fully_completed = "Fully completed";
     form_datasource_filter_task_status_any = "Any Status";
     form_datasource_filter_task_status_incomplete = "Incomplete";
-	form_datasource_filter_task_status_canceled = "Canceled";
+    form_datasource_filter_task_status_canceled = "Canceled";
     form_datasource_filter_contains_tag = "Contains Any Tag";
     form_datasource_filter_contains_tag_input_placeholder = "Please input tag, such as #todo";
     form_datasource_filter_customize = "Customize";
@@ -123,4 +123,5 @@ export class En implements Local {
     you_have_no_contributions_on = "No contributions on {date}";
     you_have_contributed_to = "{value} contributions on {date}";
     click_to_load_more = "Click to load more...";
+    create_new_note = "New Note";
 }

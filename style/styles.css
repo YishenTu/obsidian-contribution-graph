@@ -322,7 +322,7 @@
 /* default cell rule indicator */
 .contribution-graph .cell-rule-indicator-container {
 	position: relative;
-	width: calc(100% - 12px);
+	width: 100%;
 	display: flex;
 	flex-direction: row;
 	justify-content: flex-end;
@@ -962,4 +962,32 @@
 .input-range-value-label:hover {
 	background: var(--interactive-accent);
 	color: var(--text-on-accent);
+}
+
+.contribution-graph .cell-rule-indicator-container .create-new-button {
+	cursor: pointer;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	padding: 4px;
+	border-radius: 4px;
+	color: var(--text-muted);
+	background-color: transparent;
+	border: none;
+	margin-left: 6px;
+}
+
+.contribution-graph .cell-rule-indicator-container .create-new-button:hover {
+	color: var(--text-normal);
+	background-color: var(--background-modifier-hover);
+}
+
+.contribution-graph .cell-rule-indicator-container .create-new-button svg {
+	width: 14px;
+	height: 14px;
+}
+
+.contribution-graph .main .charts-container {
+	display: inline-block;
+	max-width: 100%;
 }
